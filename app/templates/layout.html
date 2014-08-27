@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <title>Foggy Fork - San Francisco's Food Trucks!</title>
+  <head>
+    <!-- Styling -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Hammersmith+One|Amatic+SC">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        // try loading JQuery from cache first, otherwise include the resource file
+        window.jQuery || document.write("<script src='{{ url_for('static', filename='third_party/jquery-2.1.1.min.js') }}'>\x3C/script>")
+    </script>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key= {{ api_key }}"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='third_party/geolocationmarker.js' )}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='maps.js' )}}"></script>
+    <script type="text/javascript">
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};  // base URI of the application
+        console.log({{error}})
+    </script>
+  </head>
+
+  <body>
+    {% block head %}
+    <div class="logo">
+        <p class="header">Foggy Fork</p>
+        <p class="subheader">A San Francisco Food Truck Map</p>
+    </div>
+    {% endblock %}
+
+    {% block body %} {% endblock %}
+
+    {% block footer %}
+    <div class="footer">
+        <div id="footer">© 2014 <a href="http://www.katripp.com" target="_blank">Kelsey Tripp</a></div>
+    </div>
+    {% endblock %}
+  </body>
+
+</html>

@@ -1,0 +1,149 @@
+html { height: 100% }
+
+body {
+    height: 100%; 
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+    background: beige;
+}
+
+h1, h3 {
+    color: #ff4063;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+h3, p { margin-left: 30px; }
+
+.header {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Hammersmith One', sans-serif;
+    margin-top: 8px;
+    color: #ff4063;
+}
+
+.subheader {
+    font-size: 30px;
+    font-family: 'Amatic SC', cursive;
+    margin-top: -40px;
+}
+
+.logo {
+    height: 115px;
+    padding: 10px;
+    margin: 15px 0px 0px 0px;
+    background : url(/static/images/sutro.png) no-repeat 0 0;
+    background-size: auto 115px;
+    float: left;
+}
+
+.logo p { margin-left: 50px; }
+
+.search {
+    float: left;
+    margin-top: 55px;
+    margin-left: 50px;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+#truck {
+    float: left;
+    width: 60px;
+    padding: 8px;
+}
+
+.button, input {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #882CCC;
+}
+
+input {
+    height: 30px;
+    width: 500px;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.button {
+    background-color: #AA41FF;
+    color: #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 3px;
+    margin-bottom: -12px;
+}
+
+.button:hover { background-color: #9932e5; }
+
+*:focus { outline: 0; }
+
+.icon-btn img {
+    width: 30px;
+    float: right;
+    padding: 1px;
+}
+
+.toggle-btn { background-color: beige; }
+
+.toggle-btn-down { background: #ff4063; }
+
+#toggle-btns { margin-left: 35px; }
+
+#toggle-btns a { margin-right: 10px; }
+
+#map-canvas {
+    position: relative;
+    height: 75%;
+    width: 100%;
+    float: left;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px;
+}
+
+#footer {
+    width: 15%;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Amatic SC', cursive;
+}
+
+#footer a { text-decoration: none; }
+
+.error {
+    margin-left: 50px;
+    font-size: 22px;
+    float: left;
+    margin-top: 100px;
+    width: 800px;
+}
+
+.error p, .map-error {
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+}
+
+.map-error {
+    color: #ff4063;
+    margin-top: 150px;
+    width: 800px;
+}
+
+.geo-error {
+    margin-top: -80px;
+    font-size: 18px;
+    font-family: 'Hammersmith One', sans-serif;
+    color: #ff4063;
+}

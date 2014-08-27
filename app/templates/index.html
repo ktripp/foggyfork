@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Search Bar Functions -->
+    <div id="main" class="search">
+            <img id="truck" src="static/images/truck.png">
+            <input id="search" type="text" placeholder=" Where in the fog are you looking for food?">
+            <a id="geolocate" class="button icon-btn"><img src="static/images/geolocate.png"></a>
+
+            <span id="toggle-btns">
+                <a id="taco" class="button icon-btn toggle-btn"><img src="static/images/taco.png"></a>
+                <a id="hot dog" class="button icon-btn toggle-btn"><img src="static/images/hotdog.png"></a>
+                <a id="donut" class="button icon-btn toggle-btn"><img src="static/images/donut.png"></a>
+            </div>
+    </div>
+
+    <!-- Map -->
+    <div id="map-canvas"></div>
+{% endblock %}
