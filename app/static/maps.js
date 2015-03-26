@@ -1,5 +1,4 @@
 var foodTrucks = function () {
-    /* something new to me */
     "use strict";
 
     /* default map center - SF */
@@ -95,7 +94,7 @@ var foodTrucks = function () {
                     if (markers[key] === undefined) {
                         markers[key] = createMarker(map, trucks[i]);
                     } else if (markers[key].map === null) {
-                            markers[key].setMap(map);
+                        markers[key].setMap(map);
                     }
                 }, i * 5);
             });
@@ -190,14 +189,14 @@ var foodTrucks = function () {
                 /* handle error most likely thrown if user denies location services */
                 handleGeoError();
             }, {
-                /* timeout after 5 seconds and re-use same location within 60 seconds*/
+                /* timeout after 5 seconds and re-use same location within 60 seconds */
                 timeout: 5000,
                 maximumAge: 60000
             });
 
             /* add a listener to update the position if necessary */
             navigator.geolocation.watchPosition(function (position) {
-                /* upon clicking the geolocation button, re-center map around the current position*/
+                /* upon clicking the geolocation button, re-center map around the current position */
                 $("#geolocate").click(function () {
                     map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
                     map.setZoom(defaultGeoZoom + 1);
@@ -249,7 +248,7 @@ var foodTrucks = function () {
 
         /* add a click listener to pop up an info window on clicking the marker */
         google.maps.event.addListener(marker, 'click', function () {
-            infoWindow.content = getInfoWindowContent(name, truckData.address, truckData.fooditems, truckData.schedule);
+            infoWindow.setContent(getInfoWindowContent(name, truckData.address, truckData.fooditems, truckData.schedule));
             infoWindow.open(map, marker);
         });
         return marker;

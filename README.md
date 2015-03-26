@@ -21,7 +21,7 @@ The client-side code is written in Javascript and calls the APIs defined by the 
 
 
 ###Backend Details
-I am familiar with Python, although I have never implemented my own API service in Python or used Flask.  I wanted to use Python because I enjoy the simplicity and lightness of the language, and I chose to use Flask after some research into lightweight frameworks for Python REST APIs.  Flask is easy and straightforward to set up, deploy on Heroku, and test.  Sphinx was used to generate API documentation for my Flask APIs.
+I wanted to use Python because I enjoy the simplicity and lightness of the language, and I chose to use Flask after some research into lightweight frameworks for Python REST APIs.  Flask is easy and straightforward to set up, deploy on Heroku, and test.  Sphinx was used to generate API documentation for my Flask APIs.
 
 ###Frontend Details
 I used Javascript and several Javascript libraries in order to write the client code. I've used the Google Maps APIs as the basis of my application, and more details about additional libraries are below.
@@ -127,4 +127,4 @@ Author
 ------
 **Kelsey Tripp** (www.katripp.com)
 
-See http://foggyfork.herokuapp.com/candidate
+See http://foggyfork.herokuapp.com/author

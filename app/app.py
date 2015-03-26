@@ -135,11 +135,11 @@ class FoodTrucks():
         # return a JSON response
         return jsonify(resp=trucks)
 
-    @app.route('/candidate')
+    @app.route('/author')
     def get_candidate_data():
         """
-        This resource represents the job application candidate.
-        Returns candidate details as a JSON response.
+        This resource represents the application author!
+        Returns author details as a JSON response.
         """
         data = {
             "name": "Kelsey Tripp",

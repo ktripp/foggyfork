@@ -14,8 +14,8 @@
 
 
 \title{foggy fork Documentation}
-\date{August 11, 2014}
-\release{1.0}
+\date{March 25, 2015}
+\release{1.1}
 \author{Kelsey Tripp}
 \newcommand{\sphinxlogo}{}
 \renewcommand{\releasename}{Release}
@@ -128,15 +128,6 @@ Contents:
 \label{api::doc}\label{api:welcome-to-foggy-fork-s-documentation}\label{api:foggy-fork-api-documentation}
 
 \begin{fulllineitems}
-\phantomsection\label{api:get--candidate}\pysigline{\bfcode{GET~}\bfcode{/candidate}}
-This resource represents the Uber coding challenge candidate.
-Returns candidate details as a JSON response.
-
-\end{fulllineitems}
-
-
-
-\begin{fulllineitems}
 \phantomsection\label{api:get--trucks}\pysigline{\bfcode{GET~}\bfcode{/trucks}}
 The main API resource - handles incoming requests, pulls food truck permit
 data from data.sfgov.org, filters the data based on the request, and returns
@@ -186,22 +177,20 @@ food item descriptions in the dataset.
 
 
 \begin{fulllineitems}
-\phantomsection\label{api:get--}\pysigline{\bfcode{GET~}\bfcode{/}}
-Renders the home page of the application.
+\phantomsection\label{api:get--author}\pysigline{\bfcode{GET~}\bfcode{/author}}
+This resource represents the application author!
+Returns author details as a JSON response.
 
 \end{fulllineitems}
 
 
 
-\chapter{Indices and tables}
-\label{index:indices-and-tables}\begin{itemize}
-\item {} 
-\emph{modindex}
+\begin{fulllineitems}
+\phantomsection\label{api:get--}\pysigline{\bfcode{GET~}\bfcode{/}}
+Renders the home page of the application.
 
-\item {} 
-\emph{search}
+\end{fulllineitems}
 
-\end{itemize}
 
 
 \renewcommand{\indexname}{HTTP Routing Table}
@@ -210,8 +199,8 @@ Renders the home page of the application.
 \bigletter{/}
 \item {\texttt{GET /}}, \pageref{api:get--}
 \indexspace
-\bigletter{/candidate}
-\item {\texttt{GET /candidate}}, \pageref{api:get--candidate}
+\bigletter{/author}
+\item {\texttt{GET /author}}, \pageref{api:get--author}
 \indexspace
 \bigletter{/trucks}
 \item {\texttt{GET /trucks}}, \pageref{api:get--trucks}

@@ -11,10 +11,3 @@ Contents:
    
    api
 
-
-Indices and tables
-==================
-
-* :ref:`modindex`
-* :ref:`search`
-
