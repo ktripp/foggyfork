@@ -198,8 +198,30 @@ var foodTrucks = function () {
             navigator.geolocation.watchPosition(function (position) {
                 /* upon clicking the geolocation button, re-center map around the current position */
                 $("#geolocate").click(function () {
-                    map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-                    map.setZoom(defaultGeoZoom + 1);
+                    if ($('#search').val() != "") {
+                        map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+                        map.setZoom(defaultGeoZoom + 1);
+                    } else {
+                        /* get truck data and add a map marker for each truck */
+                        $.getJSON($SCRIPT_ROOT + '/trucks?name=' + $('#search').val(), function (data) {
+                            var trucks = data.resp;
+
+                            /* handle any error responses */
+                            handleRequestError(trucks);
+
+                            // /* for each truck, drop the marker if it doesn't already exist */
+                            // $.each(trucks, function (i) {
+                            //     setTimeout(function () {
+                            //         var key = String(trucks[i].latitude) + String(trucks[i].longitude);
+                            //         if (markers[key] === undefined) {
+                            //             markers[key] = createMarker(map, trucks[i]);
+                            //         } else if (markers[key].map === null) {
+                            //             markers[key].setMap(map);
+                            //         }
+                            //     }, i * 5);
+                            // });
+                        });
+                    }
                 });
             });
         } else {

@@ -87,6 +87,9 @@ class FoodTrucks():
         if food_items != None:
             food_items = [x for x in food_items.split(",") if x]
 
+        # get the truck name
+        requested_name = request.args.get("name")
+
         # grab the dataset for all trucks
         try:
             data = json.load(urlopen(SF_DATA_URL))
@@ -127,11 +130,20 @@ class FoodTrucks():
 
                         # add the data for this truck only if one of the food query items match
                         if food_items == None:
-                            trucks.append(truck_data)
+                            if requested_name != None:
+                                if truck_data['name'].lower() == requested_name.lower():
+                                    trucks.append(truck_data)
+                            else:
+                                trucks.append(truck_data)
                         else:
                             for item in food_items:
                                 if 'fooditems' in truck_data and Util.containsSubstring(truck_data['fooditems'], item):
-                                    trucks.append(truck_data)
+                                    if requested_name != None:
+                                        if truck_data['name'].lower() == requested_name.lower():
+                                            trucks.append(truck_data)
+                                    else:
+                                        trucks.append(truck_data)
+
         # return a JSON response
         return jsonify(resp=trucks)
 
